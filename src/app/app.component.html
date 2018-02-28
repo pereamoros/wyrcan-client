@@ -1,25 +1,26 @@
 <header>
-  <div class="container">
-    Nice Header
+  <div class="header-wrapper">
+    <div class="header-logo">
+      <a [routerLink]="['/']">
+        <img src="/assets/img/small-logo-wyrcan.png" alt="Wyrcan Logo" />
+      </a>
+    </div>
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
       <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/profile']">{{user.username}}</a>
         <a (click)="logout()">logout</a>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a [routerLink]="['/login']">login</a>
-        <a [routerLink]="['/signup']">signup</a>
       </div>
     </div>
   </div>
 </header>
-<router-outlet></router-outlet>
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>
 <footer>
   <div class="container">
-    © Nice Footer
+    © Developed by <span class="bold">Pere Amorós</span>
   </div>
 </footer>
 

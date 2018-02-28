@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 0;
+}
+
+
+/* ---- typography ---- */
+
+body {
+  color: #444;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+p { margin: 0;}
+.bold{font-weight: bold;}
+
+/* ---- layout ---- */
+body {
+  margin: 0;
+}
+.main-wrapper{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+header{
+  width: 100%;
+  padding: 10px 20px;
+  background: #1371A7;
+  position: relative;
+  z-index: 1;
+}
+footer{
+  background: #444;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+  z-index: 999;
+}
+.content-wrapper{
+  padding: 95px 20px 50px;
+  background: #fff;
+  min-height: 100vh;
+  margin-bottom: -43px;
+  margin-top: -77px;
+}
+.container {
+  margin: 0 20px;
+}
+/* ---- components ---- */
+/* HEADER */
+.header-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo img{
+  width: 50px;
+}
+/* FORMS */
+.form-input, .form-button, .form-textarea {
+  margin-bottom: 15px;
+}
+.form-input label{
+  display: block;
+  margin-bottom: 10px;
+}
+.form-input input{
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.form-button button{
+  width: 100%;
+  padding: 15px 5px;
+  font-size: 14px;
+  color: #fff;
+}
+.error, .validation{
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+.success{
+  color: #248224;
+}
+.form-textarea textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 0;
+  padding: 5px;
+}
+/* BUTTON COLORS */
+.btn-home-signup, .btn-signup{
+  background: #35b535;
+  box-shadow: 0px 3px 0px #248224;
+  color: #fff;
+}
+.btn-home-login, .btn-login, .btn-create, .btn-update{
+  background: #00B7FF;
+  box-shadow: 0px 3px 0px #1371A7;
+  color: #fff;
+}
+  /* LOGIN - SIGNUP  */
+.login-wrapper, .signup-wrapper{
+  color: #444;
+  margin-bottom: 20px;
+}
