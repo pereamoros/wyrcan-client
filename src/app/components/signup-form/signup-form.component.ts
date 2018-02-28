@@ -12,8 +12,10 @@ export class SignupFormComponent implements OnInit {
   error= null;
   feedbackEnabled = false;
   processing = false;
+  name: String;
   username: String;
   password: String;
+  role: String;
 
   constructor(
     private authService: AuthService,
@@ -28,8 +30,11 @@ export class SignupFormComponent implements OnInit {
     if (form.valid) {
       this.processing = true;
       this.authService.signup({
+          name: this.name,
           username: this.username,
-          password: this.password })
+          password: this.password,
+          role: this.role
+        })
         .then((result) => {
           this.router.navigate(['/profile']);
         })
