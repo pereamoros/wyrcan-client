@@ -8,7 +8,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProfilePageComponent implements OnInit {
 
-  title = 'app';
   user: any;
 
   constructor(private authService: AuthService) { }

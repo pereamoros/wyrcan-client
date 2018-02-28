@@ -22,6 +22,7 @@ import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
+import { JobsService } from './services/jobs.service';
 //Pipes
 //Routes
 const routes: Routes = [
@@ -55,7 +56,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [AuthService, InitAuthGuardService, RequireAnonGuardService, RequireUserGuardService],
+  providers: [AuthService, JobsService, InitAuthGuardService, RequireAnonGuardService, RequireUserGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
