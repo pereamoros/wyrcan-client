@@ -20,7 +20,7 @@ import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
 //Routes
 const routes: Routes = [
-  { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
   { path: 'login',  component: LoginFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'signup',  component: SignupFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },

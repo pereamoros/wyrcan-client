@@ -123,8 +123,19 @@ footer{
   box-shadow: 0px 3px 0px #1371A7;
   color: #fff;
 }
-  /* LOGIN - SIGNUP  */
+/* LOGIN - SIGNUP  */
 .login-wrapper, .signup-wrapper{
   color: #444;
   margin-bottom: 20px;
+}
+/* MYJOBS (employer view)  */
+.myjobs-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1371A7;
+}
+.myjobs-nav a{
+  line-height: 33px;
+  font-size: 18px;
 }
