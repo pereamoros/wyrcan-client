@@ -1,7 +1,8 @@
-<div class="myjobs-nav">
-  <div>
-    <a href="/jobs"> My Jobs</a>
-  </div>
+<div *ngIf="user.role === 'employer'">
+  <app-nav-employer></app-nav-employer>
+</div>
+<div *ngIf="user.role === 'student'">
+  <app-nav-student></app-nav-student>
 </div>
 <div class="profile-wrapper">
   <div class="profile-img">

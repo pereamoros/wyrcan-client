@@ -1,9 +1,19 @@
 <header>
   <div class="header-wrapper">
     <div class="header-logo">
-      <a [routerLink]="['/']">
-        <img src="/assets/img/small-logo-wyrcan.png" alt="Wyrcan Logo" />
-      </a>
+      <div *ngIf="!user">
+        <a [routerLink]="['/']">
+          <img src="/assets/img/small-logo-wyrcan.png" alt="Wyrcan Logo" />
+        </a>
+      </div>
+      <div *ngIf="user">
+        <a *ngIf="user.role === 'employer'" [routerLink]="['/my-jobs']">
+          <img src="/assets/img/small-logo-wyrcan.png" alt="Wyrcan Logo" />
+        </a>
+        <a *ngIf="user.role === 'student'" [routerLink]="['/jobs']">
+          <img src="/assets/img/small-logo-wyrcan.png" alt="Wyrcan Logo" />
+        </a>
+      </div>
     </div>
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="loading">
