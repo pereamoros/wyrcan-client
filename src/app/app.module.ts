@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
 //Components
+import { CreateJobComponent } from './pages/create-job/create-job.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'signup',  component: SignupFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs',  component: MyJobsComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
@@ -44,7 +46,8 @@ const routes: Routes = [
     MyJobsComponent,
     NavEmployerComponent,
     NavStudentComponent,
-    JobsComponent
+    JobsComponent,
+    CreateJobComponent
   ],
   imports: [
     BrowserModule,
