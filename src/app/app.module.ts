@@ -15,8 +15,7 @@ import { CreateJobComponent } from './pages/create-job/create-job.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 //Components
-import { NavEmployerComponent } from './components/nav-employer/nav-employer.component';
-import { NavStudentComponent } from './components/nav-student/nav-student.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
 //Services
 import { AuthService } from './services/auth.service';
@@ -48,12 +47,11 @@ const routes: Routes = [
     SignupFormComponent,
     ProfilePageComponent,
     MyJobsComponent,
-    NavEmployerComponent,
-    NavStudentComponent,
     JobsComponent,
     CreateJobComponent,
     JobCardComponent,
-    JobsIdComponent
+    JobsIdComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

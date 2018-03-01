@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService } from '../../services/jobs.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-job.component.css']
 })
 export class CreateJobComponent implements OnInit {
-
+  user: any;
   error= null;
   feedbackEnabled = false;
   processing = false;
@@ -18,9 +19,11 @@ export class CreateJobComponent implements OnInit {
 
   constructor(
     private jobsService: JobsService,
-    private router: Router) { }
+    private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
   }
 
   submitForm(form) {

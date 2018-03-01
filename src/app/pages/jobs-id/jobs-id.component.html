@@ -1,9 +1,4 @@
-<div *ngIf="user.role === 'employer'">
-  <app-nav-employer></app-nav-employer>
-</div>
-<div *ngIf="user.role === 'student'">
-  <app-nav-student></app-nav-student>
-</div>
+<app-navbar [user]="user"></app-navbar>
 <div *ngIf="!job">
   Loading job ...
 </div>
