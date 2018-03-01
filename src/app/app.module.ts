@@ -6,24 +6,25 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 //Pages
+import { SignupFormComponent } from './pages/signup-form/signup-form.component';
+import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
-//Components
 import { CreateJobComponent } from './pages/create-job/create-job.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
+//Components
 import { NavEmployerComponent } from './components/nav-employer/nav-employer.component';
 import { NavStudentComponent } from './components/nav-student/nav-student.component';
-import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { JobCardComponent } from './components/job-card/job-card.component';
 //Services
 import { AuthService } from './services/auth.service';
+import { JobsService } from './services/jobs.service';
 //Guards
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
-import { JobsService } from './services/jobs.service';
-import { JobCardComponent } from './components/job-card/job-card.component';
 //Pipes
 //Routes
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'my-jobs',  component: MyJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'jobs/:id',  component: JobsIdComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -50,7 +52,8 @@ const routes: Routes = [
     NavStudentComponent,
     JobsComponent,
     CreateJobComponent,
-    JobCardComponent
+    JobCardComponent,
+    JobsIdComponent
   ],
   imports: [
     BrowserModule,

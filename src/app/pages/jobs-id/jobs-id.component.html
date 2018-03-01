@@ -1,0 +1,19 @@
+<div *ngIf="user.role === 'employer'">
+  <app-nav-employer></app-nav-employer>
+</div>
+<div *ngIf="user.role === 'student'">
+  <app-nav-student></app-nav-student>
+</div>
+<div *ngIf="!job">
+  Loading job ...
+</div>
+<div *ngIf="job">
+  <div class="job-details">
+    <div class="job-position">
+      {{job.position}}
+    </div>
+    <div class="job-description">
+        {{job.description}}
+      </div>
+  </div>
+</div>

@@ -16,11 +16,16 @@ export class JobsService {
       .toPromise()
   }
 
-  create(user: any): Promise<any> {
+  getJob(id) :Promise<any> {
+    return this.httpClient.get(`${this.API_URL}/${id}`)
+      .toPromise()
+  }
+
+  create(job: any): Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/create`, user, options)
+    return this.httpClient.post(`${this.API_URL}/create`, job, options)
       .toPromise()
   }
 
