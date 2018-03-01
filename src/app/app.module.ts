@@ -23,6 +23,7 @@ import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 import { JobsService } from './services/jobs.service';
+import { JobCardComponent } from './components/job-card/job-card.component';
 //Pipes
 //Routes
 const routes: Routes = [
@@ -48,7 +49,8 @@ const routes: Routes = [
     NavEmployerComponent,
     NavStudentComponent,
     JobsComponent,
-    CreateJobComponent
+    CreateJobComponent,
+    JobCardComponent
   ],
   imports: [
     BrowserModule,
