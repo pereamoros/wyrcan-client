@@ -27,7 +27,7 @@ export class JobsService {
       .toPromise()
   }
 
-  getJob(id) :Promise<any> {
+  getJob(id: any) :Promise<any> {
     return this.httpClient.get(`${this.API_URL}/${id}`)
       .toPromise()
   }
@@ -37,6 +37,14 @@ export class JobsService {
       withCredentials: true
     };
     return this.httpClient.post(`${this.API_URL}/create`, job, options)
+      .toPromise()
+  }
+
+  apply(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/apply`, id, options)
       .toPromise()
   }
 

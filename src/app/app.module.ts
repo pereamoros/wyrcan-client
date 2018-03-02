@@ -17,6 +17,7 @@ import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 //Components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
+import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
 //Services
 import { AuthService } from './services/auth.service';
 import { JobsService } from './services/jobs.service';
@@ -42,16 +43,17 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    LoginFormComponent,
-    SignupFormComponent,
-    ProfilePageComponent,
-    MyJobsComponent,
-    JobsComponent,
+    ApplicantCardComponent,
     CreateJobComponent,
+    HomePageComponent,
+    JobsComponent,
     JobCardComponent,
     JobsIdComponent,
-    NavbarComponent
+    LoginFormComponent,
+    MyJobsComponent,
+    NavbarComponent,
+    ProfilePageComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,

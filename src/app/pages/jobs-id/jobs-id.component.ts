@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { JobsService } from '../../services/jobs.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jobs-id',
@@ -15,20 +16,27 @@ export class JobsIdComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private jobsService: JobsService,
-    private route: ActivatedRoute ) { }
+    private route: ActivatedRoute,
+    private router: Router ) { }
 
   ngOnInit() {
-    this.user = this.authService.getUser();
-
+    
     this.route.params
     .subscribe((params) => {
       this.jobId = String(params['id'])
     })
     this.jobsService.getJob(this.jobId)
-      .then((job) => {
-        this.job = job;
-      })
+    .then((job) => {
+      this.job = job;
+    })
+    this.user = this.authService.getUser();
+  }
 
+  apply(id){
+    this.jobsService.apply(id)
+    .then((result) => {
+      this.router.navigate(['/jobs']);
+    })
   }
 
 }
