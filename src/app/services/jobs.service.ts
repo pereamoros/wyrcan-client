@@ -12,7 +12,18 @@ export class JobsService {
   constructor(private httpClient: HttpClient) { }
 
   getList(): Promise<any>{
-    return this.httpClient.get(`${this.API_URL}/my-jobs`)
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/jobs`, options)
+      .toPromise()
+  }
+
+  getMyList(): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/my-jobs`, options)
       .toPromise()
   }
 

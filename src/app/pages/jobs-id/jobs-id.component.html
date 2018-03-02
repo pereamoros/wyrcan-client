@@ -12,3 +12,14 @@
       </div>
   </div>
 </div>
+<div class="applicants-wrapper">
+  <div *ngIf="!user">
+    Loading applicants ...
+  </div>
+  <div *ngIf="user.role === 'employer'">
+    <h2>Applicants</h2>
+  </div>
+  <div *ngIf="user.role === 'student'">
+    <button>Apply</button>
+  </div>
+</div>

@@ -1,4 +1,15 @@
 <app-navbar [user]="user"></app-navbar>
-<p>
-  jobs works!
-</p>
+<div *ngIf="!jobs" class="no-content">
+  <p>Loading ...</p>
+</div>
+<div class="myjobs-wrapper" *ngIf="jobs">
+  <h1>Job Offers</h1>
+  <div *ngFor="let job of jobs">
+    <a [routerLink]="['/jobs', job._id]">
+      <app-job-card [job]="job"></app-job-card>
+    </a>
+  </div>
+  <div *ngIf="jobs.length === 0" class="job-item">
+    No job offers yet.
+  </div>
+</div>

@@ -14,13 +14,12 @@ export class MyJobsComponent implements OnInit {
   
   constructor(
     private jobsService: JobsService,
-    private authService: AuthService
-  ) { }
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
 
-    this.jobsService.getList()
+    this.jobsService.getMyList()
     .then((jobs) => {
       this.jobs = jobs;
     })

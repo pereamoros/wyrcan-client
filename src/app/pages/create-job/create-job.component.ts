@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { JobsService } from '../../services/jobs.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 
 
 @Component({

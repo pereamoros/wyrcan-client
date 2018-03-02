@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { JobsService } from '../../services/jobs.service';
 
 @Component({
   selector: 'app-jobs',
@@ -8,10 +9,18 @@ import { AuthService } from '../../services/auth.service';
 })
 export class JobsComponent implements OnInit {
   user: any;
-  constructor(private authService: AuthService) { }
+  jobs: any;
+  
+  constructor(private authService: AuthService,
+  private jobsService: JobsService) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
+
+    this.jobsService.getList()
+    .then((jobs) => {
+      this.jobs = jobs;
+    })
   }
 
 }
