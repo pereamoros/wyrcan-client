@@ -44,7 +44,7 @@ export class JobsService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/${id}/apply`, id, options)
+    return this.httpClient.post(`${this.API_URL}/${id}/apply`, {}, options)
       .toPromise()
   }
 
