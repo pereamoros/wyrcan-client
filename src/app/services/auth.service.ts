@@ -70,7 +70,10 @@ export class AuthService {
   }
 
   getUserId(id){
-    return this.httpClient.get(`${this.API_URL}/profile/${id}`)
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/profile/${id}`, options)
       .toPromise()
   }
 }

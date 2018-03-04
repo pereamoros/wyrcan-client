@@ -10,14 +10,16 @@ import { SignupFormComponent } from './pages/signup-form/signup-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ProfileIdComponent } from './pages/profile-id/profile-id.component';
 import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
-import { CreateJobComponent } from './pages/create-job/create-job.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
+import { CreateJobComponent } from './pages/create-job/create-job.component';
 //Components
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { JobCardComponent } from './components/job-card/job-card.component';
 import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
+import { JobCardComponent } from './components/job-card/job-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 //Services
 import { AuthService } from './services/auth.service';
 import { JobsService } from './services/jobs.service';
@@ -32,7 +34,7 @@ const routes: Routes = [
   { path: 'login',  component: LoginFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'signup',  component: SignupFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },
-  { path: 'profile/:id',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'profile/:id',  component: ProfileIdComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs',  component: MyJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
@@ -54,6 +56,8 @@ const routes: Routes = [
     MyJobsComponent,
     NavbarComponent,
     ProfilePageComponent,
+    ProfileIdComponent,
+    ProfileInfoComponent,
     SignupFormComponent
   ],
   imports: [
