@@ -1,5 +1,7 @@
-<div class="applicant-item">
-  <div class="applicant-name">
-    {{applicant.user.name}}
+<a [routerLink]="['/profile', applicant.user._id]">
+  <div class="applicant-item">
+    <div class="applicant-name">
+      {{applicant.user.name}}
+    </div>
   </div>
-</div>
+</a>

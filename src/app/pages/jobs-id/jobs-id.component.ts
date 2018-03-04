@@ -20,6 +20,7 @@ export class JobsIdComponent implements OnInit {
     private router: Router ) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
     
     this.route.params
     .subscribe((params) => {
@@ -29,7 +30,6 @@ export class JobsIdComponent implements OnInit {
     .then((job) => {
       this.job = job;
     })
-    this.user = this.authService.getUser();
   }
 
   apply(id){

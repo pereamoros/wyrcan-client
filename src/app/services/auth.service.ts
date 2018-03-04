@@ -68,4 +68,9 @@ export class AuthService {
   getUser(): any {
     return this.user;
   }
+
+  getUserId(id){
+    return this.httpClient.get(`${this.API_URL}/profile/${id}`)
+      .toPromise()
+  }
 }

@@ -5,9 +5,7 @@
 <div class="myjobs-wrapper" *ngIf="jobs">
   <h1>My Jobs</h1>
   <div *ngFor="let job of jobs">
-    <a [routerLink]="['/jobs', job._id]">
-      <app-job-card [job]="job"></app-job-card>
-    </a>
+    <app-job-card [job]="job"></app-job-card>
   </div>
   <div *ngIf="jobs.length === 0" class="job-item">
     No jobs created yet.

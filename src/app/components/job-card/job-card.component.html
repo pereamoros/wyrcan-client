@@ -1,8 +1,10 @@
-<div class="job-item">
-  <div class="job-position">
-    {{job.position}}
+<a [routerLink]="['/jobs', job._id]">
+  <div class="job-item">
+    <div class="job-position">
+      {{job.position}}
+    </div>
+    <div class="job-description">
+      {{job.description}}
+    </div>
   </div>
-  <div class="job-description">
-    {{job.description}}
-  </div>
-</div>
+</a>

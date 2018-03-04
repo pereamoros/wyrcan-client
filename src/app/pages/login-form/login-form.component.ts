@@ -30,7 +30,7 @@ export class LoginFormComponent implements OnInit {
           username: this.username,
           password: this.password })
         .then((result) => {
-          this.router.navigate(['/profile']);
+          this.router.navigate([`/profile/`]);
         })
         .catch((err) => {
           this.error = err.error.error;

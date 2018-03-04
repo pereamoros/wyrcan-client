@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'login',  component: LoginFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'signup',  component: SignupFormComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'profile/:id',  component: ProfilePageComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs',  component: MyJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
