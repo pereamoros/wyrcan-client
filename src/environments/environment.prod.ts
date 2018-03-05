@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://wyrcan.herokuapp.com'
+  apiUrl: 'https://wyrcan.herokuapp.com'
 };
