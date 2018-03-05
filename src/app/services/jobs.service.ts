@@ -4,10 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class JobsService {
 
-  private API_URL = 'http://localhost:3000/jobs';
+  private API_URL = environment.apiUrl + '/jobs';
 
   constructor(private httpClient: HttpClient) { }
 
