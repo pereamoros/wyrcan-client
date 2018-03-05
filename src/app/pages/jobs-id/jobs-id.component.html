@@ -28,6 +28,14 @@
     </div>
   </div>
   <div *ngIf="user.role === 'student'">
-      <button (click)="apply(job._id)">Apply</button>
+    <div *ngIf="!job">Loading applicants...</div>
+    <div *ngIf="job">
+      <div>
+        Published by: <a [routerLink]="['/profile', job.owner._id]">{{job.owner.name}}</a>
+      </div>
+      <div>
+        <button (click)="apply(job._id)">Apply</button>
+      </div>
+    </div>
   </div>
 </div>
