@@ -1,0 +1,30 @@
+.signup-radio{
+  display: flex;
+  justify-content: space-around;
+}
+.signup-input{
+  position: relative;
+}
+.signup-input input{
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  z-index: 9999;
+}
+.signup-input label{
+  display: inline-block;
+  padding: 20px;
+  cursor:pointer;
+  border-radius: 5px;
+  border-top-left-radius: 15px;
+  background: #4B8FB6;
+  color: #fff;
+}
+.signup-input input[type="radio"]:checked+label {
+  background-color: #1371A7;
+}
+.signup-input label:hover{
+  -webkit-filter: brightness(1.1) grayscale(0) opacity(1);
+     -moz-filter: brightness(1.1) grayscale(0) opacity(1);
+          filter: brightness(1.1) grayscale(0) opacity(1);
+}

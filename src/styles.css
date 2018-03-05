@@ -118,7 +118,7 @@ footer{
   box-shadow: 0px 3px 0px #248224;
   color: #fff;
 }
-.btn-home-login, .btn-login, .btn-create, .btn-update{
+.btn-home-login, .btn-login, .btn-create{
   background: #00B7FF;
   box-shadow: 0px 3px 0px #1371A7;
   color: #fff;
@@ -128,14 +128,21 @@ footer{
   color: #444;
   margin-bottom: 20px;
 }
-/* MYJOBS (employer view)  */
-.myjobs-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #1371A7;
+/* BTN */
+.btn{
+  background: #ddd;
+  box-shadow: 0px 3px 0px #CFCDCB;
+  border-radius: 2px;
+  padding: 5px 15px;
 }
-.myjobs-nav a{
-  line-height: 33px;
-  font-size: 18px;
+.reset-a a{
+  color: #1371A7;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+button:active, .btn-home-signup:active,.btn-home-login:active, .btn:active{ 
+  box-shadow: none;
+  position: relative;
+  top: 3px;
 }

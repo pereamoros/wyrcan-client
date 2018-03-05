@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileInfoComponent implements OnInit {
   @Input() userProfile:any
+  @Input() userRole:any
   constructor() { }
 
   ngOnInit() {

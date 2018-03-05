@@ -19,8 +19,8 @@
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
-      <div *ngIf="!loading && !!user">
-        <a (click)="logout()">Log Out</a>
+      <div class="reset-a" *ngIf="!loading && !!user">
+        <a (click)="logout()"><div class="btn">Log Out</div></a>
       </div>
     </div>
   </div>

@@ -11,12 +11,15 @@ export class ProfilePageComponent implements OnInit {
   userId: any;
   user: any;
   userProfile: any;
+  userRole: any;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
     this.userProfile = this.authService.getUser();
+    this.userRole = this.authService.getUser();
+    
   }
 
 }

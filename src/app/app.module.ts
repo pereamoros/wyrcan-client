@@ -15,6 +15,7 @@ import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 import { CreateJobComponent } from './pages/create-job/create-job.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 //Components
 import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs/:id',  component: JobsIdComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'messages',  component: MessagesComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -53,6 +55,7 @@ const routes: Routes = [
     JobCardComponent,
     JobsIdComponent,
     LoginFormComponent,
+    MessagesComponent,
     MyJobsComponent,
     NavbarComponent,
     ProfilePageComponent,
