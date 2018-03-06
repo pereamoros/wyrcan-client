@@ -71,7 +71,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [AuthService, JobsService, InitAuthGuardService, RequireAnonGuardService, RequireUserGuardService],
+  providers: [AuthService,
+    JobsService,
+    InitAuthGuardService,
+    RequireAnonGuardService,
+    RequireUserGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

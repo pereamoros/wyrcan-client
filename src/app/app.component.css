@@ -1,0 +1,9 @@
+/* HEADER */
+.header-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo img, .logout-img{
+  width: 20px;
+}

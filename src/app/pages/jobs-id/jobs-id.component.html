@@ -24,6 +24,9 @@
       <div *ngFor="let applicant of job.applications">
         <app-applicant-card [applicant]="applicant"></app-applicant-card>
       </div>
+      <div *ngIf="job.applications.length === 0">
+        No one has applied yet.
+      </div>
     </div>
   </div>
   <div *ngIf="user.role === 'student'">
