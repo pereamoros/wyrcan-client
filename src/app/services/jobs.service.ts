@@ -58,6 +58,14 @@ export class JobsService {
       .toPromise()
   }
 
+  unarchive(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/unarchive`, {}, options)
+      .toPromise()
+  }
+
   getArchived(): Promise<any>{
     const options = {
       withCredentials: true

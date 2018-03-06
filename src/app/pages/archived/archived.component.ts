@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { JobsService } from '../../services/jobs.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-archived',
@@ -14,7 +15,8 @@ export class ArchivedComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private jobsService: JobsService) { }
+    private jobsService: JobsService,
+    private router: Router) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
@@ -22,6 +24,13 @@ export class ArchivedComponent implements OnInit {
     this.jobsService.getArchived()
     .then((jobs) => {
       this.jobs = jobs;
+    })
+  }
+
+  handleUnarchive(event){
+    this.jobsService.unarchive(event)
+    .then((result) => {
+      this.router.navigate(['/my-jobs']);
     })
   }
 
