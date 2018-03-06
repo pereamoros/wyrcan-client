@@ -50,4 +50,12 @@ export class JobsService {
       .toPromise()
   }
 
+  archive(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/archive`, {}, options)
+      .toPromise()
+  }
+
 }

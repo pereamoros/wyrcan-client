@@ -1,6 +1,9 @@
 <app-navbar [user]="user"></app-navbar>
 <div *ngIf="!job">Loading job ...</div>
 <div *ngIf="job">
+  <div>
+    <button (click)="archive(job._id)" class="btn-create">Archive</button>
+  </div>
   <div class="job-details">
     <div class="job-position">
       <h2>Job Position:</h2>

@@ -39,4 +39,11 @@ export class JobsIdComponent implements OnInit {
     })
   }
 
+  archive(id){
+    this.jobsService.archive(id)
+    .then((result) => {
+      this.router.navigate(['/my-jobs']);
+    })
+  }
+
 }
