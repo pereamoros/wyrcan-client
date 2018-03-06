@@ -6,4 +6,5 @@
 }
 .header-logo img, .logout-img{
   width: 20px;
+  padding-top: 8px;
 }

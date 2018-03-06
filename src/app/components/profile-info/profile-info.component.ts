@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-info',
@@ -8,9 +10,30 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProfileInfoComponent implements OnInit {
   @Input() userProfile:any
   @Input() userRole:any
-  constructor() { }
+  description: any;
+  userId: any;
+  editToken:Boolean
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.userId = this.userProfile._id;
+    this.editToken = false;
   }
-
+  allowEdit(){
+    if(this.editToken){
+      this.editToken = false;
+    }
+    else if(!this.editToken){
+      this.editToken = true;
+    }
+  }
+  submitForm(form) {
+    const data = this.description;
+    console.log(data);
+    console.log(this.userId);
+    this.authService.updateProfileInfo(this.userId, data)
+    .then((result)=>
+      this.router.navigate(['/profile']))
+  }
 }

@@ -12,22 +12,17 @@ body {
   height: 0;
 }
 
-
 /* ---- typography ---- */
-
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/assets/style/Phenomena-Black.otf');
+}
 body {
   color: #444;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 147%;
 }
-
-h1 {}
-
-h2 {}
-
-h3 {}
-
 p { margin: 0;}
 .bold{font-weight: bold;}
 
@@ -58,7 +53,7 @@ footer{
   padding: 95px 20px 50px;
   background: #f5f5f5;
   min-height: 100vh;
-  margin-bottom: -13px;
+  margin-bottom: -21px;
   margin-top: -78px;
 }
 .container {
@@ -85,7 +80,11 @@ footer{
   width: 100%;
   padding: 15px 5px;
   font-size: 14px;
-  color: #fff;
+  font-weight: bold;
+  color: #1371A7;
+  background: #fff;
+  border: 1px solid #1471a7;
+  border-radius: 5px;
 }
 .error, .validation{
   color: red;
@@ -102,17 +101,6 @@ footer{
   border: 1px solid #ddd;
   margin: 0;
   padding: 5px;
-}
-/* BUTTON COLORS */
-.btn-home-signup, .btn-signup{
-  background: #35b535;
-  box-shadow: 0px 3px 0px #248224;
-  color: #fff;
-}
-.btn-home-login, .btn-login, .btn-create{
-  background: #00B7FF;
-  box-shadow: 0px 3px 0px #1371A7;
-  color: #fff;
 }
 /* LOGIN - SIGNUP  */
 .login-wrapper, .signup-wrapper{
@@ -132,11 +120,7 @@ footer{
   font-weight: bold;
   text-decoration: none;
 }
-button:active, .btn-home-signup:active,.btn-home-login:active, .btn:active{ 
-  box-shadow: none;
-  position: relative;
-  top: 3px;
-}
+
 .card{
   background: #fff;
   margin-bottom: 10px;
