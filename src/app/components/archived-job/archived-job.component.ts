@@ -8,6 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ArchivedJobComponent implements OnInit {
   @Input() job:any;
   @Output() unarchive = new EventEmitter<string>();
+  @Output() delete = new EventEmitter<string>();
+  
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +17,9 @@ export class ArchivedJobComponent implements OnInit {
 
   handleUnarchiveClick(id){
     this.unarchive.emit(id);
+  }
+  handleDeleteClick(id){
+    this.delete.emit(id);
   }
 
 }

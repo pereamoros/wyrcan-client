@@ -3,7 +3,7 @@
 <div *ngIf="jobs">
   <h2>Archived Jobs</h2>
   <div *ngFor="let job of jobs">
-    <app-archived-job [job]="job" (unarchive)="handleUnarchive($event)"></app-archived-job>
+    <app-archived-job [job]="job" (unarchive)="handleUnarchive($event)" (delete)="handleDelete($event)"></app-archived-job>
   </div>
   <div *ngIf="jobs.length === 0">
     No jobs archived yet.

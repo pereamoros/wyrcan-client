@@ -12,7 +12,6 @@ export class ArchivedComponent implements OnInit {
   
   user: any;
   jobs: any;
-
   constructor(
     private authService: AuthService,
     private jobsService: JobsService,
@@ -31,6 +30,16 @@ export class ArchivedComponent implements OnInit {
     this.jobsService.unarchive(event)
     .then((result) => {
       this.router.navigate(['/my-jobs']);
+    })
+  }
+
+  handleDelete(event){
+    this.jobsService.deleteJob(event)
+    .then((result) => {
+      this.jobsService.getArchived()
+      .then((jobs) => {
+        this.jobs = jobs;
+      })
     })
   }
 

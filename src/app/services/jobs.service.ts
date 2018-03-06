@@ -66,6 +66,14 @@ export class JobsService {
       .toPromise()
   }
 
+  deleteJob(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/delete`, {}, options)
+      .toPromise()
+  }
+
   getArchived(): Promise<any>{
     const options = {
       withCredentials: true
