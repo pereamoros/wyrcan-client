@@ -4,7 +4,11 @@
 </div>
 <div class="myjobs-wrapper" *ngIf="jobs">
   <h1>Job Offers</h1>
-  <div *ngFor="let job of jobs">
+  <div class="filter-job form-input">
+    <label for="filter-position">Search for job position: </label>
+    <input id="filter-position" placeholder="job position" type="text" [(ngModel)]="pattern">
+  </div>
+  <div *ngFor="let job of jobs | filter:'position':pattern">
     <app-job-card [job]="job"></app-job-card>
   </div>
   <div *ngIf="jobs.length === 0" class="job-item">

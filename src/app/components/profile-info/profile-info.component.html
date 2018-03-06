@@ -15,7 +15,11 @@
   </div>
   <div *ngIf="!userRole">Loading ...</div>
   <div *ngIf="userRole.role === 'employer' && userProfile.role === 'student'">
-    <button>Message</button>
-    <button>Accept</button>
+    <div class="form-button">
+      <button class="btn-create">Message</button>
+    </div>
+    <div class="form-button">
+      <button class="btn-create">Accept</button>
+    </div>
   </div>
 </div>

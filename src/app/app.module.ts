@@ -29,6 +29,7 @@ import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
+import { FilterPipe } from './pipes/filter.pipe';
 //Routes
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
@@ -61,7 +62,8 @@ const routes: Routes = [
     ProfilePageComponent,
     ProfileIdComponent,
     ProfileInfoComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

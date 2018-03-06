@@ -1,7 +1,5 @@
 <app-navbar [user]="user"></app-navbar>
-<div *ngIf="!job">
-  Loading job ...
-</div>
+<div *ngIf="!job">Loading job ...</div>
 <div *ngIf="job">
   <div class="job-details">
     <div class="job-position">
@@ -12,17 +10,16 @@
       <h2>Job Description:</h2>      
       {{job.description}}
     </div>
+    <div *ngIf="user.role === 'student'">
+      <span class="bold">Published by:</span> <a [routerLink]="['/profile', job.owner._id]">{{job.owner.name}}</a>
+    </div>
   </div>
 </div>
 <div class="applicants-wrapper">
-  <div *ngIf="!user">
-    Loading applicants ...
-  </div>
+  <div *ngIf="!user">Loading applicants ...</div>
   <div *ngIf="user.role === 'employer'">
     <h2>Applicants</h2>
-    <div *ngIf="!job">
-      Loading applicants ...
-    </div>
+    <div *ngIf="!job">Loading applicants ...</div>
     <div *ngIf="job">
       <div *ngFor="let applicant of job.applications">
         <app-applicant-card [applicant]="applicant"></app-applicant-card>
@@ -32,11 +29,8 @@
   <div *ngIf="user.role === 'student'">
     <div *ngIf="!job">Loading info ...</div>
     <div *ngIf="job">
-      <div>
-        Published by: <a [routerLink]="['/profile', job.owner._id]">{{job.owner.name}}</a>
-      </div>
-      <div>
-        <button (click)="apply(job._id)">Apply</button>
+      <div class="form-button">
+        <button (click)="apply(job._id)" class="btn-create">Apply</button>
       </div>
     </div>
   </div>
