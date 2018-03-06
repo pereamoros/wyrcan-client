@@ -58,4 +58,11 @@ export class JobsService {
       .toPromise()
   }
 
+  getArchived(): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/archived`, options)
+      .toPromise()
+  }
 }

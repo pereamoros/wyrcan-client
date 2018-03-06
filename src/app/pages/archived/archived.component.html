@@ -1,0 +1,11 @@
+<app-navbar [user]="user"></app-navbar>
+<div *ngIf="!jobs">Loading jobs ...</div>
+<div *ngIf="jobs">
+  <h2>Archived Jobs</h2>
+  <div *ngFor="let job of jobs">
+    <app-job-card [job]="job"></app-job-card>
+  </div>
+  <div *ngIf="jobs.length === 0">
+    No jobs archived yet.
+  </div>
+</div>

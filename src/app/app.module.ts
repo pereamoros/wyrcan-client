@@ -15,8 +15,9 @@ import { MyJobsComponent } from './pages/my-jobs/my-jobs.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 import { CreateJobComponent } from './pages/create-job/create-job.component';
-import { MessagesComponent } from './pages/messages/messages.component';
+import { ArchivedComponent } from './pages/archived/archived.component';
 //Components
+import { AddJobComponent } from './components/add-job/add-job.component';
 import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,7 +31,6 @@ import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
 import { FilterPipe } from './pipes/filter.pipe';
-import { AddJobComponent } from './components/add-job/add-job.component';
 //Routes
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
@@ -40,9 +40,9 @@ const routes: Routes = [
   { path: 'profile/:id',  component: ProfileIdComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs',  component: MyJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'my-jobs/archived',  component: ArchivedComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs/:id',  component: JobsIdComponent , canActivate: [ RequireUserGuardService ] },
-  { path: 'messages',  component: MessagesComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -57,7 +57,6 @@ const routes: Routes = [
     JobCardComponent,
     JobsIdComponent,
     LoginFormComponent,
-    MessagesComponent,
     MyJobsComponent,
     NavbarComponent,
     ProfilePageComponent,
@@ -65,7 +64,8 @@ const routes: Routes = [
     ProfileInfoComponent,
     SignupFormComponent,
     FilterPipe,
-    AddJobComponent
+    AddJobComponent,
+    ArchivedComponent
   ],
   imports: [
     BrowserModule,

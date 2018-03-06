@@ -23,6 +23,7 @@
       <button class="btn-create">Accept</button>
     </div>
   </div>
+  <a *ngIf="userRole.role === 'employer'" [routerLink]="['/my-jobs/archived']">Archived</a>
   <div *ngIf="userRole.role === 'employer' && userProfile.role === 'employer'" >
     <app-add-job></app-add-job>
   </div>
