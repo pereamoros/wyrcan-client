@@ -1,3 +1,12 @@
 .job-details{
   margin-bottom: 25px;
 }
+.job-details h2{
+  margin-top: 0px;
+}
+.arch-nav{
+  text-align: right;
+}
+.arch-nav span, .job-publisher a {
+  color: #1371a7;
+}

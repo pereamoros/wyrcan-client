@@ -1,20 +1,20 @@
 <app-navbar [user]="user"></app-navbar>
 <div *ngIf="!job">Loading job ...</div>
 <div *ngIf="job">
-  <div *ngIf="user.role === 'employer'">
-    <button (click)="archive(job._id)" class="btn-create">Archive</button>
+  <div *ngIf="user.role === 'employer'" class="arch-nav">
+    <span (click)="archive(job._id)">Archive</span>
   </div>
   <div class="job-details">
     <div class="job-position">
-      <h2>Job Position:</h2>
-      {{job.position}}
+      <h2>{{job.position}}</h2>
     </div>
     <div class="job-description">
-      <h2>Job Description:</h2>
-      {{job.description}}
+      <span class="bold">Description:</span>
+      <p>{{job.description}}</p>
     </div>
-    <div *ngIf="user.role === 'student'">
-      <span class="bold">Published by:</span> <a [routerLink]="['/profile', job.owner._id]">{{job.owner.name}}</a>
+    <div *ngIf="user.role === 'student'" class="job-publisher">
+      <span class="bold">Published by:</span>
+      <p><a [routerLink]="['/profile', job.owner._id]">{{job.owner.name}}</a></p>
     </div>
   </div>
 </div>

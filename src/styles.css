@@ -130,4 +130,9 @@ footer{
 }
 a {
   text-decoration: none;
+  color: #444;
+}
+.job-position, .applicant-name {
+  text-transform: uppercase;
+  font-weight: bold;
 }
