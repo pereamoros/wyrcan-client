@@ -19,7 +19,6 @@ export class ProfilePageComponent implements OnInit {
     this.user = this.authService.getUser();
     this.userProfile = this.authService.getUser();
     this.userRole = this.authService.getUser();
-    
   }
 
 }

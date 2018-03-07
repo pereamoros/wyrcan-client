@@ -81,4 +81,12 @@ export class JobsService {
     return this.httpClient.get(`${this.API_URL}/archived`, options)
       .toPromise()
   }
+
+  getApplied(): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/applied`, options)
+      .toPromise()
+  }
 }

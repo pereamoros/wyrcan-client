@@ -16,9 +16,11 @@ import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 import { CreateJobComponent } from './pages/create-job/create-job.component';
 import { ArchivedComponent } from './pages/archived/archived.component';
+import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.component';
 //Components
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
+import { ArchivedJobComponent } from './components/archived-job/archived-job.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
@@ -31,7 +33,7 @@ import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
 import { FilterPipe } from './pipes/filter.pipe';
-import { ArchivedJobComponent } from './components/archived-job/archived-job.component';
+import { JobAppliedCardComponent } from './components/job-applied-card/job-applied-card.component';
 //Routes
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
@@ -43,6 +45,7 @@ const routes: Routes = [
   { path: 'my-jobs/create',  component: CreateJobComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'my-jobs/archived',  component: ArchivedComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'jobs/applied',  component: AppliedJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs/:id',  component: JobsIdComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
@@ -67,7 +70,9 @@ const routes: Routes = [
     FilterPipe,
     AddJobComponent,
     ArchivedComponent,
-    ArchivedJobComponent
+    ArchivedJobComponent,
+    AppliedJobsComponent,
+    JobAppliedCardComponent
   ],
   imports: [
     BrowserModule,

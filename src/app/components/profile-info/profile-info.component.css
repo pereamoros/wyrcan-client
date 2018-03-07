@@ -9,3 +9,14 @@
 .profile-img img{
   width: 100px;
 }
+.profile-description{
+  text-align: left;
+}
+.desc-box{
+  display: flex;
+  align-items: center;
+}
+.desc-img img{
+  height: 20px;
+  margin-left: 10px;
+}

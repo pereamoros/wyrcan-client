@@ -10,8 +10,23 @@
       <h1>{{userProfile.name}}</h1>
     </div>
     <div class="profile-description">
-      <h2>Description</h2>
-      <p>{{userProfile.description}}</p>
+      <div class="desc-box">
+        <h3>About Me</h3>
+        <div class="desc-img" *ngIf="userRole === userProfile">
+          <img src="/assets/img/edit.png" alt="Edit About Me" (click)="allowEdit()" />
+        </div>
+      </div>
+      <p>{{ userProfile.description }}</p>
+      <div *ngIf="editToken">
+        <form (ngSubmit)="submitForm(form)" >
+          <div class="form-textarea">
+            <textarea name="description" [(ngModel)]="description" rows="4"></textarea>
+          </div>
+          <div class="form-button">
+            <button type="submit">Edit Information</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <div *ngIf="!userRole">Loading ...</div>

@@ -3,6 +3,9 @@
   <p>Loading ...</p>
 </div>
 <div class="myjobs-wrapper" *ngIf="jobs">
+  <div class="arch-nav">
+    <a [routerLink]="['/jobs/applied']">Applied Jobs</a>
+  </div>
   <h1>Job Offers</h1>
   <div class="filter-job form-input">
     <label for="filter-position">Search for job position: </label>

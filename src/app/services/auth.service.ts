@@ -83,5 +83,6 @@ export class AuthService {
     };
     return this.httpClient.post(`${this.API_URL}/edit/${id}`, data, options)
       .toPromise()
+      .then((user) => this.setUser(user));
   }
 }

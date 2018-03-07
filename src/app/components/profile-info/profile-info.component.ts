@@ -17,7 +17,7 @@ export class ProfileInfoComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.userProfile._id);
+    console.log(this.userRole.description);
     this.userId = this.userProfile._id;
     this.editToken = false;
   }
@@ -30,11 +30,14 @@ export class ProfileInfoComponent implements OnInit {
     }
   }
   submitForm(form) {
-    const data = this.description;
-    console.log(data);
-    console.log(this.userId);
+    const data = {
+      description: this.description
+    }
     this.authService.updateProfileInfo(this.userId, data)
-    .then((result)=>
-      this.router.navigate(['/profile']))
+    .then((result) => {
+      this.editToken = false;
+      this.userProfile = this.authService.getUser();
+    })
+    
   }
 }
