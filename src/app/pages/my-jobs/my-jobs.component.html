@@ -10,5 +10,6 @@
   <div *ngIf="jobs.length === 0" class="job-item">
     No jobs created yet.
   </div>
+  <a [routerLink]="['/my-jobs/archived']">Archived Jobs</a>
   <app-add-job></app-add-job>
 </div>

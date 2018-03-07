@@ -1,7 +1,9 @@
-<div class="card">
+<div class="card archived-card">
   <div class="job-position">
     {{job.position}}
   </div>
-  <button (click)="handleUnarchiveClick(job._id)">Unarchive</button>
-  <button (click)="handleDeleteClick(job._id)">Delete</button>
+  <div class="archived-options">
+    <span (click)="handleUnarchiveClick(job._id)">Unarchive</span>
+    <img src="/assets/img/delete-cross.png" alt="Delete Job" (click)="handleDeleteClick(job._id)" />
+  </div>
 </div>

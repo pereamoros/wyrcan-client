@@ -1,0 +1,21 @@
+.archived-card{
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+}
+.archived-options{
+  display: flex;
+  align-items: center;
+}
+.archived-options img{
+  height: 25px;
+  cursor: pointer;
+}
+.archived-options span{
+  cursor: pointer;  
+  padding: 5px 10px;
+  margin-right: 5px;
+  background: #fff;
+  color: #444;
+  border-radius: 2px;
+}
