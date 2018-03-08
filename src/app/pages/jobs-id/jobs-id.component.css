@@ -9,4 +9,5 @@
 }
 .arch-nav span, .job-publisher a {
   color: #1371a7;
+  cursor: pointer;
 }

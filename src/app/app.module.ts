@@ -35,6 +35,7 @@ import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
 import { FilterPipe } from './pipes/filter.pipe';
+import { EmptyListComponent } from './components/empty-list/empty-list.component';
 //Routes
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
@@ -75,7 +76,8 @@ const routes: Routes = [
     ArchivedJobComponent,
     AppliedJobsComponent,
     JobAppliedCardComponent,
-    CandidatePageComponent
+    CandidatePageComponent,
+    EmptyListComponent
   ],
   imports: [
     BrowserModule,

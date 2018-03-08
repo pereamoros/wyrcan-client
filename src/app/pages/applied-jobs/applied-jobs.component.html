@@ -7,7 +7,7 @@
   <div *ngFor="let job of jobs">
     <app-job-applied-card [job]="job"></app-job-applied-card>
   </div>
-  <div *ngIf="!jobs.length" class="job-item">
-    No applied jobs yet.
+  <div *ngIf="!jobs.length" class="empty-list">
+    <app-empty-list></app-empty-list>
   </div>
 </div>

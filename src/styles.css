@@ -30,10 +30,6 @@ p { margin: 0;}
 body {
   margin: 0;
 }
-.main-wrapper{
-  max-width: 1024px;
-  margin: 0 auto;
-}
 header{
   width: 100%;
   padding: 10px 20px;
@@ -53,11 +49,12 @@ footer{
   padding: 95px 20px 50px;
   background: #f5f5f5;
   min-height: 100vh;
-  margin-bottom: -21px;
+  margin-bottom: -20px;
   margin-top: -78px;
 }
 .container {
-  margin: 0 20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 /* ---- components ---- */
 /* FORMS */
@@ -132,10 +129,10 @@ footer{
   background: orange;
 }
 .accepted{
-  background: green;
+  background: lightgreen;
 }
 .rejected{
-  background: red;
+  background: orangered;
 }
 .job-position, .applicant-name {
   text-transform: uppercase;
@@ -156,4 +153,12 @@ a {
 }
 .myjobs-wrapper h1{
   margin-top: 0px;
+}
+.empty-list{
+  text-align: center;
+  color: #dedede;
+  padding-top: 50px;
+}
+.empty-list img{
+  width: 150px;
 }

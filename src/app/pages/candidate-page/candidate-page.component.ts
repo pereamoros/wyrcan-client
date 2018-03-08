@@ -31,7 +31,6 @@ export class CandidatePageComponent implements OnInit {
     this.authService.getUserId(this.userId)
     .then((user) => {
       this.userProfile = user;
-      console.log(user)
     })
     this.route.params
     .subscribe((params) => {
@@ -42,13 +41,13 @@ export class CandidatePageComponent implements OnInit {
   acceptCandidate(jobId, userId){
     this.jobsService.acceptCandidate(jobId, userId)
     .then(()=>{
-      this.router.navigate(['/my-jobs']);
+      this.router.navigate([`/jobs/${jobId}`]);
     })
   }
   rejectCandidate(jobId, userId){
     this.jobsService.rejectCandidate(jobId, userId)
     .then(()=>{
-      this.router.navigate(['/my-jobs']);
+      this.router.navigate([`/jobs/${jobId}`]);
     })
   }
 

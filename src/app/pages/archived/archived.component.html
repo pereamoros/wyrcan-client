@@ -5,7 +5,8 @@
   <div *ngFor="let job of jobs">
     <app-archived-job [job]="job" (unarchive)="handleUnarchive($event)" (delete)="handleDelete($event)"></app-archived-job>
   </div>
-  <div *ngIf="jobs.length === 0">
-    No jobs archived yet.
+  <div *ngIf="jobs.length === 0" class="empty-list">
+    <app-empty-list></app-empty-list>
+    <a [routerLink]="['/my-jobs/create']">Create a job</a>
   </div>
 </div>

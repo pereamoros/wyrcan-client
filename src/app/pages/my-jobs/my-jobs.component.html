@@ -10,8 +10,9 @@
   <div *ngFor="let job of jobs">
     <app-job-card [job]="job"></app-job-card>
   </div>
-  <div *ngIf="jobs.length === 0" class="job-item">
-    No jobs created yet.
+  <div *ngIf="!jobs.length" class="empty-list">
+    <app-empty-list></app-empty-list>
+    <a [routerLink]="['/my-jobs/create']">Create a job</a>
   </div>
   <app-add-job></app-add-job>
 </div>

@@ -1,5 +1,5 @@
 <header>
-  <div class="header-wrapper">
+  <div class="header-wrapper container">
     <div class="header-logo">
       <div *ngIf="!user">
         <a [routerLink]="['/']">
@@ -26,7 +26,9 @@
   </div>
 </header>
 <div class="content-wrapper">
-  <router-outlet></router-outlet>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 <footer>
   <div class="container">
