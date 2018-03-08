@@ -17,6 +17,7 @@ import { JobsIdComponent } from './pages/jobs-id/jobs-id.component';
 import { CreateJobComponent } from './pages/create-job/create-job.component';
 import { ArchivedComponent } from './pages/archived/archived.component';
 import { AppliedJobsComponent } from './pages/applied-jobs/applied-jobs.component';
+import { CandidatePageComponent } from './pages/candidate-page/candidate-page.component';
 //Components
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { ApplicantCardComponent } from './components/applicant-card/applicant-card.component';
@@ -24,6 +25,7 @@ import { ArchivedJobComponent } from './components/archived-job/archived-job.com
 import { JobCardComponent } from './components/job-card/job-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import { JobAppliedCardComponent } from './components/job-applied-card/job-applied-card.component';
 //Services
 import { AuthService } from './services/auth.service';
 import { JobsService } from './services/jobs.service';
@@ -33,7 +35,6 @@ import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 //Pipes
 import { FilterPipe } from './pipes/filter.pipe';
-import { JobAppliedCardComponent } from './components/job-applied-card/job-applied-card.component';
 //Routes
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService, RequireAnonGuardService ] },
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'jobs',  component: JobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs/applied',  component: AppliedJobsComponent , canActivate: [ RequireUserGuardService ] },
   { path: 'jobs/:id',  component: JobsIdComponent , canActivate: [ RequireUserGuardService ] },
+  { path: 'jobs/:id/candidate/:userId',  component: CandidatePageComponent , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -72,7 +74,8 @@ const routes: Routes = [
     ArchivedComponent,
     ArchivedJobComponent,
     AppliedJobsComponent,
-    JobAppliedCardComponent
+    JobAppliedCardComponent,
+    CandidatePageComponent
   ],
   imports: [
     BrowserModule,

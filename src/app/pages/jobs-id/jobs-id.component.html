@@ -25,7 +25,7 @@
     <div *ngIf="!job">Loading applicants ...</div>
     <div *ngIf="job">
       <div *ngFor="let applicant of job.applications">
-        <app-applicant-card [applicant]="applicant"></app-applicant-card>
+        <app-applicant-card [applicant]="applicant" [job]="job"></app-applicant-card>
       </div>
       <div *ngIf="job.applications.length === 0">
         No one has applied yet.

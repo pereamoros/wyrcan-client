@@ -21,7 +21,6 @@ export class AppliedJobsComponent implements OnInit {
     this.jobsService.getApplied()
     .then((user) => {
       this.jobs = user.appliedJobs;
-      console.log(this.jobs.job)
     })
   }
 

@@ -89,4 +89,19 @@ export class JobsService {
     return this.httpClient.get(`${this.API_URL}/applied`, options)
       .toPromise()
   }
+
+  acceptCandidate(id, userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/candidate/${userId}/accept`, {}, options)
+      .toPromise()
+  }
+  rejectCandidate(id, userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/candidate/${userId}/reject`, {}, options)
+      .toPromise()
+  }
 }

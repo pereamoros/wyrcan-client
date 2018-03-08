@@ -17,6 +17,7 @@ export class ProfileInfoComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.userProfile);
     this.userId = this.userProfile._id;
     this.editToken = false;
   }

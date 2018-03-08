@@ -94,13 +94,13 @@ footer{
 .success{
   color: #248224;
 }
-.form-textarea textarea {
-  outline: none;
+.form-input textarea {
   resize: none;
   width: 100%;
   border: 1px solid #ddd;
   margin: 0;
-  padding: 5px;
+  padding: 10px 5px;
+  font-size: 12px;
 }
 /* LOGIN - SIGNUP  */
 .login-wrapper, .signup-wrapper{
@@ -130,6 +130,12 @@ footer{
 }
 .pending{
   background: orange;
+}
+.accepted{
+  background: green;
+}
+.rejected{
+  background: red;
 }
 .job-position, .applicant-name {
   text-transform: uppercase;

@@ -11,7 +11,6 @@ export class JobAppliedCardComponent implements OnInit {
   constructor(private jobsService: JobsService) { }
 
   ngOnInit() {
-    console.log(this.job);
   }
 
 }

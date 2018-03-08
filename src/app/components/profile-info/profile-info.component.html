@@ -19,7 +19,7 @@
       <p>{{ userProfile.description }}</p>
       <div *ngIf="editToken">
         <form (ngSubmit)="submitForm(form)" >
-          <div class="form-textarea">
+          <div class="form-input">
             <textarea name="description" [(ngModel)]="description" rows="4"></textarea>
           </div>
           <div class="form-button">
@@ -29,34 +29,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="!userRole">Loading ...</div>
-  <div *ngIf="userRole.role === 'employer' && userProfile.role === 'student'">
-    <div class="form-button">
-      <button class="btn-create">Message</button>
-    </div>
-    <div class="form-button">
-      <button class="btn-create">Accept</button>
-    </div>
 
-
-    <div class="form-button signup-radio">
-      <h3>Application Status:</h3>
-      <div class="signup-input">
-        <input type="radio" name="status" id="status-pending" value="pending" [(ngModel)]="role" #roleField="ngModel" checked="checked"/>
-        <label class="label-status" for="status-pending">Pending</label>
-      </div>
-      <div class="signup-input">
-        <input type="radio" name="status" id="status-accepted" value="accepted" [(ngModel)]="role" #roleField="ngModel"/>
-        <label class="label-status" for="status-accepted">Accepted</label>
-      </div>
-      <div class="signup-input">
-        <input type="radio" name="status" id="status-rejected" value="rejected" [(ngModel)]="role" #roleField="ngModel"/>
-        <label class="label-status" for="status-rejected">Rejected</label>
-      </div>
-    </div>
-
-
-  </div>
   <div *ngIf="userRole.role === 'employer' && userProfile.role === 'employer'" >
     <app-add-job></app-add-job>
   </div>
