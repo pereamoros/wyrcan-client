@@ -1,0 +1,10 @@
+.applicant{
+  display: flex;
+  align-items: center;
+}
+.applicant-img{
+  margin-right: 20px;
+}
+.applicant-img img{
+  width: 50px;
+}

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ApplicantCardComponent implements OnInit {
 
   @Input() applicant:any
-
+  @Input() job:any  
   constructor() { }
 
   ngOnInit() {

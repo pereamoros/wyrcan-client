@@ -16,11 +16,11 @@
       </div>
     </div>
     <div class="form-button">
-      <button type="submit" [disabled]="processing" class="btn-login">Log In</button>
+      <button type="submit" [disabled]="processing">Log In</button>
       <div *ngIf="feedbackEnabled && form.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
       </div>
     </div>
   </form>
-  <a [routerLink]="['/signup']">Sign Up</a>
+  <span>You don't have an account? <a [routerLink]="['/signup']" class="text-link">Sign Up</a></span>
 </div>

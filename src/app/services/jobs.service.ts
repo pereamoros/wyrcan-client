@@ -50,4 +50,58 @@ export class JobsService {
       .toPromise()
   }
 
+  archive(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/archive`, {}, options)
+      .toPromise()
+  }
+
+  unarchive(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/unarchive`, {}, options)
+      .toPromise()
+  }
+
+  deleteJob(id: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/delete`, {}, options)
+      .toPromise()
+  }
+
+  getArchived(): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/archived`, options)
+      .toPromise()
+  }
+
+  getApplied(): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/applied`, options)
+      .toPromise()
+  }
+
+  acceptCandidate(id, userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/candidate/${userId}/accept`, {}, options)
+      .toPromise()
+  }
+  rejectCandidate(id, userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.API_URL}/${id}/candidate/${userId}/reject`, {}, options)
+      .toPromise()
+  }
 }

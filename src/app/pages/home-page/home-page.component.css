@@ -6,9 +6,10 @@
 }
 .home-title h1 {
   font-family: 'Phenomena', Arial, Helvetica, sans-serif;
-  font-size: 120px;
+  font-size: 105px;
   margin: 0px;
   color: #1371A7;
+  line-height: 120px;
 }
 .home-title img{
   width: 335px;
@@ -17,17 +18,15 @@
   margin-bottom: 80px;
   font-size: 18px;
 }
-.btn-home-signup,.btn-home-login {
+.btn-home-a{
   text-decoration: none;
   font-weight: bold;
-  color: #fff; 
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 2px;
+  color: #1371A7; 
 }
-.home-signup, .home-login{
+.btn-home{
+  background: #fff;
   padding: 15px;
-  border-radius: 2px;
+  border: 1px solid #1471a7;
+  border-radius: 5px;
   margin-bottom: 10px;
 }

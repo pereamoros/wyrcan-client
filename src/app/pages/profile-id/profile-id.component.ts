@@ -10,13 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfileIdComponent implements OnInit {
   userId: any;
   user: any;
+  userRole: any;
   userProfile: any;
   constructor(private authService: AuthService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
-
+    this.userRole = this.authService.getUser();
     this.route.params
     .subscribe((params) => {
       this.userId = String(params['id'])

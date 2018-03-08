@@ -1,9 +1,29 @@
 .profile-wrapper{
   text-align: center;
+  margin-bottom: 25px;
 }
 .profile-img{
   margin: 0 auto;
-  width: 100px;;
   height: 100px;
-  background: #eee;
+}
+.profile-img img{
+  width: 100px;
+}
+.profile-description{
+  text-align: left;
+}
+.profile-description p{
+  margin-bottom: 15px;
+}
+.desc-box{
+  display: flex;
+  align-items: center;
+}
+.desc-img img{
+  height: 20px;
+  margin-left: 10px;
+}
+.btn-status{
+  flex: 1 0;
+  margin: 0 2px;
 }

@@ -1,5 +1,5 @@
 <header>
-  <div class="header-wrapper">
+  <div class="header-wrapper container">
     <div class="header-logo">
       <div *ngIf="!user">
         <a [routerLink]="['/']">
@@ -19,14 +19,16 @@
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
-      <div *ngIf="!loading && !!user">
-        <a (click)="logout()">Log Out</a>
+      <div class="reset-a" *ngIf="!loading && !!user">
+        <a (click)="logout()"><img src="/assets/img/logout.png" alt="Logout" class="logout-img" /></a>
       </div>
     </div>
   </div>
 </header>
 <div class="content-wrapper">
-  <router-outlet></router-outlet>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 <footer>
   <div class="container">

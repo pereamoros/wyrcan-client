@@ -1,0 +1,12 @@
+<app-navbar [user]="user"></app-navbar>
+<div *ngIf="!jobs">Loading jobs ...</div>
+<div *ngIf="jobs">
+  <h2>Archived Jobs</h2>
+  <div *ngFor="let job of jobs">
+    <app-archived-job [job]="job" (unarchive)="handleUnarchive($event)" (delete)="handleDelete($event)"></app-archived-job>
+  </div>
+  <div *ngIf="jobs.length === 0" class="empty-list">
+    <app-empty-list></app-empty-list>
+    <a [routerLink]="['/my-jobs/create']">Create a job</a>
+  </div>
+</div>

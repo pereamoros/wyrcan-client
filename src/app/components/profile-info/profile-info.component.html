@@ -4,10 +4,33 @@
 <div *ngIf="userProfile">
   <div class="profile-wrapper">
     <div class="profile-img">
-  
+      <img src="/assets/img/profilepic.png" alt="Profile Picture"/>
     </div>
     <div class="profile-name">
       <h1>{{userProfile.name}}</h1>
     </div>
+    <div class="profile-description">
+      <div class="desc-box">
+        <h3>About Me</h3>
+        <div class="desc-img" *ngIf="userRole._id === userProfile._id">
+          <img src="/assets/img/edit.png" alt="Edit About Me" (click)="allowEdit()" />
+        </div>
+      </div>
+      <p>{{ userProfile.description }}</p>
+      <div *ngIf="editToken">
+        <form (ngSubmit)="submitForm(form)" >
+          <div class="form-input">
+            <textarea name="description" [(ngModel)]="description" rows="4"></textarea>
+          </div>
+          <div class="form-button">
+            <button type="submit">Edit Information</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="userRole.role === 'employer' && userProfile.role === 'employer'" >
+    <app-add-job></app-add-job>
   </div>
 </div>

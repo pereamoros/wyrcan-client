@@ -1,0 +1,10 @@
+.myjobs-nav {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #1371A7;
+  margin-bottom: 25px;
+}
+.navbar a{
+  text-decoration: none;
+  color: #1371A7;
+  font-weight: bold;
+}

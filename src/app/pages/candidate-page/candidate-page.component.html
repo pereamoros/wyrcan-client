@@ -1,0 +1,20 @@
+<app-navbar [user]="user"></app-navbar>
+<app-profile-info [userRole]="userRole" [userProfile]="userProfile"></app-profile-info>
+<div *ngIf="!user">Loading ...</div>
+<div *ngIf="user">
+  <div class="form-button">
+    <button class="flex">
+      <img src="/assets/img/envelope.png" class="ico"/>
+      <span>Message</span>
+    </button>
+  </div>
+  <h3>Application Status:</h3>
+  <div class="desc-box">
+    <div class="form-button btn-status">
+      <button (click)="acceptCandidate(jobId, userId)" class="accept">Accept</button>
+    </div>
+    <div class="form-button btn-status">
+      <button (click)="rejectCandidate(jobId, userId)" class="reject">Reject</button>
+    </div>
+  </div>
+</div>

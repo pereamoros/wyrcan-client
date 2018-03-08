@@ -1,0 +1,15 @@
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ico{
+  width: 20px;
+  margin-right: 10px;
+}
+.reject{
+  background: rgba(255,0,0,.4)
+}
+.accept{
+  background: rgba(0,255,0,.4)
+}

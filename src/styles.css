@@ -12,32 +12,23 @@ body {
   height: 0;
 }
 
-
 /* ---- typography ---- */
-
+@font-face {
+  font-family: 'Phenomena';
+  src: url('/assets/style/Phenomena-Black.otf');
+}
 body {
   color: #444;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 147%;
 }
-
-h1 {}
-
-h2 {}
-
-h3 {}
-
 p { margin: 0;}
 .bold{font-weight: bold;}
 
 /* ---- layout ---- */
 body {
   margin: 0;
-}
-.main-wrapper{
-  max-width: 1024px;
-  margin: 0 auto;
 }
 header{
   width: 100%;
@@ -56,24 +47,16 @@ footer{
 }
 .content-wrapper{
   padding: 95px 20px 50px;
-  background: #fff;
+  background: #f5f5f5;
   min-height: 100vh;
-  margin-bottom: -43px;
-  margin-top: -77px;
+  margin-bottom: -20px;
+  margin-top: -78px;
 }
 .container {
-  margin: 0 20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 /* ---- components ---- */
-/* HEADER */
-.header-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-logo img{
-  width: 50px;
-}
 /* FORMS */
 .form-input, .form-button, .form-textarea {
   margin-bottom: 15px;
@@ -94,7 +77,11 @@ footer{
   width: 100%;
   padding: 15px 5px;
   font-size: 14px;
-  color: #fff;
+  font-weight: bold;
+  color: #1371A7;
+  background: #fff;
+  border: 1px solid #1471a7;
+  border-radius: 5px;
 }
 .error, .validation{
   color: red;
@@ -104,38 +91,74 @@ footer{
 .success{
   color: #248224;
 }
-.form-textarea textarea {
-  outline: none;
+.form-input textarea {
   resize: none;
   width: 100%;
   border: 1px solid #ddd;
   margin: 0;
-  padding: 5px;
-}
-/* BUTTON COLORS */
-.btn-home-signup, .btn-signup{
-  background: #35b535;
-  box-shadow: 0px 3px 0px #248224;
-  color: #fff;
-}
-.btn-home-login, .btn-login, .btn-create, .btn-update{
-  background: #00B7FF;
-  box-shadow: 0px 3px 0px #1371A7;
-  color: #fff;
+  padding: 10px 5px;
+  font-size: 12px;
 }
 /* LOGIN - SIGNUP  */
 .login-wrapper, .signup-wrapper{
   color: #444;
   margin-bottom: 20px;
 }
-/* MYJOBS (employer view)  */
-.myjobs-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #1371A7;
+/* BTN */
+.btn{
+  background: #ddd;
+  box-shadow: 0px 3px 0px #CFCDCB;
+  border-radius: 2px;
+  padding: 5px 15px;
 }
-.myjobs-nav a{
-  line-height: 33px;
-  font-size: 18px;
+.reset-a a{
+  color: #1371A7;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card{
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+}
+.pending{
+  background: orange;
+}
+.accepted{
+  background: lightgreen;
+}
+.rejected{
+  background: orangered;
+}
+.job-position, .applicant-name {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #444;
+}
+.arch-nav{
+  text-align: right;
+}
+.arch-nav a {
+  color: #1371a7;
+}
+.text-link{
+  text-decoration: underline;
+}
+.myjobs-wrapper h1{
+  margin-top: 0px;
+}
+.empty-list{
+  text-align: center;
+  color: #dedede;
+  padding-top: 50px;
+}
+.empty-list img{
+  width: 150px;
 }

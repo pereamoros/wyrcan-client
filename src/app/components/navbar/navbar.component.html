@@ -3,15 +3,12 @@
 </div>
 <div *ngIf="user">
   <div class="myjobs-nav">
-    <div>
+    <div class="navbar">
       <a [routerLink]="['/profile']">Profile</a> |
       <a *ngIf="user.role === 'employer'" [routerLink]="['/my-jobs']">My Jobs</a>
       <a *ngIf="user.role === 'student'" [routerLink]="['/jobs']">Jobs</a>
     </div>
     <div>
-      <div class="btn btn-create-job" *ngIf="user.role === 'employer'">
-        <a [routerLink]="['/my-jobs/create']">Create Job</a>
-      </div>
     </div>
   </div>
 </div>
